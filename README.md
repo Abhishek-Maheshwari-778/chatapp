@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Real-Time Chat Application
 
 This is a real-time chat application built using **HTML**, **CSS**, **JavaScript**, **Node.js**, and **WebSocket**. It allows users to join different chat rooms, send messages, create new rooms, and see other users currently in the room.
@@ -107,3 +108,6 @@ Feel free to fork the repository and submit pull requests. If you find any bugs 
 ## Author
 
 - [Nikhat Ali](https://github.com/nikhat29)
+=======
+# chat_website
+>>>>>>> 9b03e67f0c01acd33d3c5cbc8615beb87e2d042f
