@@ -102,12 +102,6 @@ If you are having trouble connecting to the WebSocket server, make sure that you
 - **Missing dependencies**:
 If you run into any issues with missing dependencies, try running npm install again in the project root.
 
-## Contributing
-Feel free to fork the repository and submit pull requests. If you find any bugs or have suggestions for improvements, open an issue, and I will be happy to address them.
 
-## Author
 
-- [Nikhat Ali](https://github.com/nikhat29)
-=======
-# chat_website
->>>>>>> 9b03e67f0c01acd33d3c5cbc8615beb87e2d042f
+
