@@ -1,0 +1,16 @@
+// Add this script to handle join chat
+document.addEventListener('DOMContentLoaded', function() {
+    const joinForm = document.getElementById('joinForm');
+    
+    joinForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        if(username.trim()) {
+            // Store username
+            localStorage.setItem('chatUsername', username);
+            // Show chat interface
+            document.getElementById('chatSection').style.display = 'block';
+            document.getElementById('authSection').style.display = 'none';
+        }
+    });
+});
