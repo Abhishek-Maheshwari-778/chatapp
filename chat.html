@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp - Chat Room</title>
+    <link rel="stylesheet" href="chat-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="room-info">
+                <h2>Chat Rooms</h2>
+                <button id="createRoomBtn">Create Room</button>
+            </div>
+            <ul id="roomList" class="room-list"></ul>
+            <div class="user-list">
+                <h3>Users in Room</h3>
+                <ul id="userList"></ul>
+            </div>
+        </div>
+        
+        <div class="main-chat">
+            <div id="chatHeader" class="chat-header">
+                <h2>Welcome to Chat</h2>
+                <button id="leaveRoom" class="leave-btn">Leave Room</button>
+            </div>
+            <div id="chatMessages" class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="joinModal" class="modal">
+        <div class="modal-content">
+            <h2>Join Chat</h2>
+            <input type="text" id="usernameInput" placeholder="Enter username">
+            <button id="joinButton">Join</button>
+        </div>
+    </div>
+
+    <div id="createRoomModal" class="modal">
+        <div class="modal-content">
+            <h2>Create New Room</h2>
+            <input type="text" id="roomNameInput" placeholder="Enter room name">
+            <button id="createButton">Create</button>
+        </div>
+    </div>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>

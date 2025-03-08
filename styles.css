@@ -1,0 +1,286 @@
+/* Ensure html and body take full height and prevent overflow */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Ensure the body and html can scroll */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto;   /* Allow vertical scrolling */
+}
+
+/* Responsive design for sections */
+.section {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  background: url(bg.jpg) no-repeat center center;  /* Background image */
+  background-size: cover;  /* Makes sure the image covers the entire viewport */
+  min-height: 100vh;  /* Ensures the body takes up at least the full height */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;  /* Prevent scrolling */
+  position: relative;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+/* General layout and styling */
+#authSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 50px auto;
+  border-radius: 8px;
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  width: 500px;
+}
+
+#authSection input,
+#authSection select,
+#authSection button,
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Remove animations on input fields */
+#authSection input:focus,
+#authSection select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Button Animations (with translation on hover) */
+
+.middle {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+/* Translation effect on hover */
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-4px);  /* Slightly raises the button */
+}
+
+/* Chat Section */
+#chatSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: white;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  width: 500px;
+}
+
+#chatSection button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+/* Translation effect on hover */
+#chatSection button:hover {
+  background-color: #0056b3;
+  transform: translateY(-4px);  /* Slightly raises the button */
+}
+
+/* Chat Window */
+#chatWindow {
+  height: 300px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Message input */
+#messageInput {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* User List */
+#userList {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+#userList li {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#userList li:hover {
+  background-color: #e2e2e2;
+}
+
+/* Popup Modal Styling */
+.popup-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it sits above other content */
+  padding: 20px;
+}
+
+.popup-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.popup-close {
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.popup-close:hover {
+  color: #007bff;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in animation for chat window */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #authSection, #chatSection {
+    width: 90%;
+    padding: 10px;
+  }
+
+  #messageInput {
+    width: 60%;
+    margin-right: 5px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
